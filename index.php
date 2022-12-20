@@ -1,4 +1,7 @@
-<?php require_once('view/base.view.php');
+<?php 
+session_start();
+
+require_once('view/base.view.php');
 require_once('connect.php');
 
 $sql = 'SELECT * FROM `products`';
@@ -13,6 +16,14 @@ require_once('close.php');
 <main class="contrainer">
     <div class="row">
         <section class="col-12">
+            <?php
+                if(!empty($_SESSION['erreur'])){
+                    echo '<div class="alert alert-danger" role="alert">'
+                    . $_SESSION['erreur'] .
+                  '</div>';
+                  $_SESSION['erreur'] = "";
+                }
+            ?>
             <h1>Liste des produits</h1>
             <table class="table text-center">
                 <thead>
