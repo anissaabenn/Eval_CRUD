@@ -35,13 +35,14 @@ require_once('close.php');
                         <td><?= $produit['price'] ?></td>
                         <td><?= $produit['category'] ?></td>
                         <td><?= $produit['quantity'] ?></td>
-                        <td></td>
+                        <td><a href="update.php?id=<?= $produit['id'] ?>">Modifier</a></td>
                     </tr>
                     <?php
                     }
                     ?>
                 </tbody>
             </table>
+            <a href="add.php" class="btn btn-secondary">Ajouter un produit</a>
     </section>
     </div>
 </main>
