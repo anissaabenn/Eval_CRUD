@@ -14,15 +14,14 @@ require_once('close.php');
     <div class="row">
         <section class="col-12">
             <h1>Liste des produits</h1>
-            <table class="table">
+            <table class="table text-center">
                 <thead>
                     <th>ID</th>
                     <th>Nom</th>
-                    <th>Description</th>
                     <th>Prix</th>
                     <th>Categorie</th>
                     <th>Quantitée</th>
-                    <th>Action</th>
+                    <th colspan="2">Action</th>
                 </thead>
                 <tbody>
                     <?php
@@ -31,10 +30,10 @@ require_once('close.php');
                     <tr>
                         <td><?= $produit['id'] ?></td>
                         <td><?= $produit['name'] ?></td>
-                        <td><?= $produit['description'] ?></td>
                         <td><?= $produit['price'] ?></td>
                         <td><?= $produit['category'] ?></td>
                         <td><?= $produit['quantity'] ?></td>
+                        <td><a href="details.php?id=<?= $produit['id'] ?>">Voir</a></td>
                         <td><a href="update.php?id=<?= $produit['id'] ?>">Modifier</a></td>
                     </tr>
                     <?php
