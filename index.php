@@ -24,6 +24,14 @@ require_once('close.php');
                   $_SESSION['erreur'] = "";
                 }
             ?>
+            <?php
+                if(!empty($_SESSION['message'])){
+                    echo '<div class="alert alert-success" role="alert">'
+                    . $_SESSION['message'] .
+                  '</div>';
+                  $_SESSION['message'] = "";
+                }
+            ?>
             <h1>Liste des produits</h1>
             <table class="table text-center">
                 <thead>
